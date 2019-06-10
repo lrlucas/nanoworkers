@@ -2,31 +2,40 @@
   <!-- Sidebar scroll-->
   <div class="scroll-sidebar ps ps--theme_default ps--active-y">
     <!-- Sidebar navigation-->
-    <nav class="sidebar-nav active">
+    <nav class="sidebar-nav" [routerLinkActive]="['active']">
       <ul id="sidebarnav" class="in">
 
         <li class="active">
-
           <a class="has-arrow waves-effect waves-dark" aria-expanded="false">
             <i class="mdi mdi-gauge"></i>
             <span class="hide-menu">
               Work Section
-              <span class="label label-rouded label-themecolor pull-right">3</span>
+              <span class="label label-rouded label-themecolor pull-right">{{ sidebarRoutes.length }}</span>
             </span>
           </a>
 
-
           <ul aria-expanded="true" class="collapse in">
-            <li class="active"><a [routerLink]="['/dashboard/jobs']" class="active">Available Jobs</a></li>
-            <li><a [routerLink]="['/dashboard']">Work in progress</a></li>
-            <li><a [routerLink]="['/dashboard']">Completed work</a></li>
-<!--            <li><a href="index4.html">Modern</a></li>-->
+            <li *ngFor="let route of sidebarRoutes">
+              <a [routerLink]="[route.route]" [routerLinkActive]="['active']">{{ route.title }}</a>
+            </li>
           </ul>
-
-
         </li>
 
+        <li class="active">
+          <a class="has-arrow waves-effect waves-dark" aria-expanded="false">
+            <i class="mdi mdi-account"></i>
+            <span class="hide-menu">
+              Profile Section
+              <span class="label label-rouded label-themecolor pull-right">1</span>
+            </span>
+          </a>
 
+          <ul aria-expanded="true" class="collapse in">
+            <li>
+              <a [routerLink]="['/dashboard/profile']">My Profile</a>
+            </li>
+          </ul>
+        </li>
 
 
       </ul>

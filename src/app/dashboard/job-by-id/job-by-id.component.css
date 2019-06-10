@@ -1,0 +1,27 @@
+span i {
+  font-size: 47px;
+  color: #4f69d6;
+}
+
+.lstick{
+  vertical-align: unset;
+}
+
+.list-icons li {
+  list-style: none;
+  margin: 5px 0;
+  line-height: 30px;
+}
+ul.list-icons {
+  padding-inline-start: 0;
+}
+
+.center-button-work{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.center-button-work button{
+  margin-left: 10px;
+}

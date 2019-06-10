@@ -1,5 +1,60 @@
 <div class="row">
+  <div class="col-12 col-sm-12 col-md-12">
+    <div class="card">
+      <div class="card-body">
+        <form class="app-search">
+          <label for="search-job">Search Job</label>
+          <input id="search-job" type="text" class="form-control" placeholder="Search & enter">
+<!--          <a class="srh-btn">-->
+<!--            <i class="ti-close"></i>-->
+<!--          </a>-->
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="row">
   <div class="col-12">
-    <h2>Jobs works!</h2>
+    <div class="card">
+      <div class="card-body">
+        <h4 class="card-title">Available Jobs</h4>
+        <!-- Aqui se insertara un buscador para la tabla -->
+        <div class="table-responsive">
+          <table class="table table-hover">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Job Name</th>
+                <th>Payment</th>
+                <th>Time</th>
+                <th>Completed</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let job of jobs">
+                <td>{{ job["id"] }}</td>
+                <td>
+                  <a [routerLink]="['/dashboard/jobs']" (click)="getJobById(job['id'])"> {{ job["title"] }} </a>
+                </td>
+                <td>{{ job["payment"] }}</td>
+                <td>{{ job["time"] }}</td>
+                <td>{{ job["completed"] }}</td>
+              </tr>
+            </tbody>
+            <tfoot>
+              <tr>
+                <th>#</th>
+                <th>Job Name</th>
+                <th>Payment</th>
+                <th>Time</th>
+                <th>Complete</th>
+              </tr>
+            </tfoot>
+          </table>
+        </div>
+      </div>
+    </div>
   </div>
 </div>

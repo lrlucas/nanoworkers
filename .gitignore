@@ -23,6 +23,9 @@ speed-measure-plugin.json
 .settings/
 *.sublime-workspace
 
+# Firebase
+.firebaserc
+
 # IDE - VSCode
 .vscode/*
 !.vscode/settings.json
@@ -30,6 +33,7 @@ speed-measure-plugin.json
 !.vscode/launch.json
 !.vscode/extensions.json
 .history/*
+.editorconfig
 
 # misc
 /.sass-cache
